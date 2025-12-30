@@ -1,6 +1,6 @@
 export async function onRequest({ request, params, env }) {
   try {
-    return await fetch('http://scf.pages-cloud.qcdntest.cn/stream');
+    return await fetch('http://scf.pages-cloud.qcdntest.cn/stream-chat');
   } catch (err) {
     console.error(err);
     return new Response(
