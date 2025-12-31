@@ -1,18 +1,18 @@
 export async function onRequest({ request, params, env }) {
   return new Response(JSON.stringify({
-      "status": true,
-      "msg": "服务运行正常",
-      "ext": {
-          "client-ip": request.eo.clientIp || '',
-          "server-ip": res.data.ip || '',
-      }
+    "status": true,
+    "msg": "服务运行正常",
+    "ext": {
+      "client-ip": 'xxx',
+      "server-ip": 'xxx2',
+    }
   }), {
-      status: 200,
-      headers: new Headers({
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": 'simx.com',
-          "Cache-Control": "no-store",
-      })
+    status: 200,
+    headers: new Headers({
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": 'simx.com',
+      "Cache-Control": "no-store",
+    })
   });
 }
 
