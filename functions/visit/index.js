@@ -6,17 +6,16 @@ export async function onRequest({ request, params, env }) {
       "client-ip": 'xxx',
       "server-ip": 'xxx2'
     }
-  }));
+  }), {
+    status: 200,
+    headers: new Headers({
+      'my-header-x': 'hello world'
+      // "Content-Type": "application/json",
+      // "Access-Control-Allow-Origin": 'simx.com',
+      // "Cache-Control": "no-store"
+    })
+  });
 }
-
-// {
-//     status: 200,
-//     headers: new Headers({
-//       "Content-Type": "application/json",
-//       "Access-Control-Allow-Origin": 'simx.com',
-//       "Cache-Control": "no-store"
-//     })
-//   }
 
 // export async function onRequest({ request, params, env }) {
 //   const headersObj = Object.fromEntries(request.headers);
