@@ -4,17 +4,19 @@ export async function onRequest({ request, params, env }) {
     "msg": "服务运行正常",
     "ext": {
       "client-ip": 'xxx',
-      "server-ip": 'xxx2',
+      "server-ip": 'xxx2'
     }
-  }), {
-    status: 200,
-    headers: new Headers({
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": 'simx.com',
-      "Cache-Control": "no-store",
-    })
-  });
+  }));
 }
+
+// {
+//     status: 200,
+//     headers: new Headers({
+//       "Content-Type": "application/json",
+//       "Access-Control-Allow-Origin": 'simx.com',
+//       "Cache-Control": "no-store"
+//     })
+//   }
 
 // export async function onRequest({ request, params, env }) {
 //   const headersObj = Object.fromEntries(request.headers);
