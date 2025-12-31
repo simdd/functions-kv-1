@@ -1,5 +1,23 @@
 export async function onRequest({ request, params, env }) {
-  const headersObj = Object.fromEntries(request.headers);
-  return new Response(JSON.stringify(headersObj));
-  // return await fetch('http://scf.pages-cloud.qcdntest.cn/stream-chat');
+  return new Response(JSON.stringify({
+      "status": true,
+      "msg": "服务运行正常",
+      "ext": {
+          "client-ip": request.eo.clientIp || '',
+          "server-ip": res.data.ip || '',
+      }
+  }), {
+      status: 200,
+      headers: new Headers({
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": 'simx.com',
+          "Cache-Control": "no-store",
+      })
+  });
 }
+
+// export async function onRequest({ request, params, env }) {
+//   const headersObj = Object.fromEntries(request.headers);
+//   return new Response(JSON.stringify(headersObj));
+//   // return await fetch('http://scf.pages-cloud.qcdntest.cn/stream-chat');
+// }
