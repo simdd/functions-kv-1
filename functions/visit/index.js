@@ -10,7 +10,7 @@ export async function onRequest({ request, params, env }) {
     status: 200,
     headers: new Headers({
       'my-header-x': 'hello world',
-      'Access-Control-Allow-Origin': 'simx.com',
+      'Access-Control-Allow-Origin': '*',
       'Content-Type': 'application/json',
       'Cache-Control': 'no-store'
     })
