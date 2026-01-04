@@ -4,7 +4,8 @@ export async function onRequest({ request, params, env }) {
     "msg": "服务运行正常",
     "ext": {
       "client-ip": 'xxx',
-      "server-ip": 'xxx2'
+      "server-ip": 'xxx2',
+      "time": Date.now()
     }
   }), {
     status: 200,
