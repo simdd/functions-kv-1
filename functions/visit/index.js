@@ -1,10 +1,19 @@
 export async function onRequest({ request, params, env }) {
+  const t1 = Date.now();
+  await new Promise((res) => {
+    setTimeout(() => {
+      res(true)
+    }, 10000)
+  });
+
+  const t2 = Date.now();
   return new Response(JSON.stringify({
     "status": true,
     "msg": "服务运行正常",
     "ext": {
       "client-ip": 'xxx',
-      "server-ip": 'xxx2'
+      "server-ip": 'xxx2',
+      "cost": t2 - t1
     }
   }), {
     status: 200,
